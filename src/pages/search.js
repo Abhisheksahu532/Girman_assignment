@@ -69,7 +69,7 @@ export default function Search({ data }) {
   };
 
   return (
-    <div className='bg-gradient-to-b from-white to-blue-100'>
+    <div className='bg-gradient-to-b from-white to-blue-100 min-h-screen flex flex-col'>
       <nav className="bg-white shadow-md w-full">
         <div className="container mx-auto flex justify-evenly items-center py-4 px-8">
           {/* Logo */}
