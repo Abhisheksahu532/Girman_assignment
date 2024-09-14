@@ -44,7 +44,6 @@ const UserCard = ({ firstname, location, lastname, phone, onFetchDetails }) => {
             sx={{
               flexDirection: 'column',
               alignItems: 'center',
-              marginBottom: '10px',
             }}
           >
             <Typography variant="body2" color="textSecondary">
@@ -55,12 +54,12 @@ const UserCard = ({ firstname, location, lastname, phone, onFetchDetails }) => {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                marginTop: '10px',
               }}
             >
-              <Typography variant="body2" color="textSecondary" style={{ marginRight: '10px' }}>
+              <Typography variant="body2" color="textSecondary" style={{ marginRight: '75px' }}>
                 <Phone style={{ fontSize: '16px', verticalAlign: 'middle' }} /> {phone}
               </Typography>
+         
               <Button
                 variant="contained"
                 color="primary"
@@ -70,6 +69,9 @@ const UserCard = ({ firstname, location, lastname, phone, onFetchDetails }) => {
                 Fetch Details
               </Button>
             </Box>
+            <Typography  color="textSecondary" style={{fontSize: '10px', marginLeft: '5px' }}>
+               Available on Phone
+            </Typography>
           </Box>
         </CardContent>
       </Card>
@@ -80,58 +82,64 @@ const UserCard = ({ firstname, location, lastname, phone, onFetchDetails }) => {
         onClose={handleClose}
         PaperProps={{
           style: {
-            width: '400px',  // Increase the width as needed
-            height: '350px', // Increase the height as needed
+            width: '450px',  // Increase the width as needed
+            height: '460px', // Increase the height as needed
           },
         }}
       >
         <DialogTitle sx={{ 
-            padding: '20px', 
-            textAlign: 'center', // Center the dialog title
+            padding: '10px',
+            marginLeft: '20px', 
+            textAlign: 'left',
+            fontWeight: 'bold',  
             borderBottom: '1px solid #ddd' // Optional: add border below title for separation
-          }}>Fetch Details</DialogTitle>
+          }}>Fetch Details
+          </DialogTitle>
         <DialogContent>
-          <Box sx={{ padding: '20px' }}>
+          <Box sx={{ padding: 'px' }}>
             <Typography  variant="body2" // Reduce size by using a smaller variant
-              style={{ marginBottom: '20px', color: '#4B4F54' }} >
+              style={{ marginBottom: '10px', color: '#4B4F54' }} >
               Here are the details of the following employee
             </Typography>
 
-            <Typography variant="h6" gutterBottom>
+            <Typography variant="body1" >
               Name: {firstname} {lastname}
             </Typography>
 
-            <Typography variant="body1" style={{ marginTop: '10px' }}>
-              <LocationOn style={{ fontSize: '16px', verticalAlign: 'middle' }} /> Location: {location}
+            <Typography variant="body1" >
+               Location: {location}
             </Typography>
 
-            <Typography variant="body1" style={{ marginTop: '10px' }}>
-              <Phone style={{ fontSize: '16px', verticalAlign: 'middle' }} /> Contact number: {phone}
+            <Typography variant="body1" >
+               Contact number: {phone}
             </Typography>
 
+            <Typography variant="body1" style={{ marginTop: '15px', marginBottom: '5px' }} >
+              Profile Image:
+            </Typography>
             <Box
               sx={{
                 width: '100%',
-                height: '200px', // Set height for the rectangle containing the image
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                border: '1px solid #ddd', // Optional: add border for the rectangle
-                marginBottom: '20px',
+                height: '180px', // Set height for the rectangle containing the image
               }}
             >
+             
               <Image
-                src="/image.png" // Use the user's image URL if available
+                src="/image_square.png" // Use the user's image URL if available
                 alt="User Avatar"
-                width={150} // Adjust width as needed
-                height={150} // Adjust height as needed
+                width={180} // Adjust width as needed
+                height={200} // Adjust height as needed
                 layout="intrinsic"
               />
             </Box>
           </Box>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color="primary">
+          <Button onClick={handleClose} color="black"
+          sx ={{
+            border: '1px solid #ddd'
+          }}
+          >
             Close
           </Button>
         </DialogActions>
