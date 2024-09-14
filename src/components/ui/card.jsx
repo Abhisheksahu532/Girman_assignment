@@ -17,6 +17,9 @@ const userCard = ({ name, location, phone, image }) => {
         <Button variant="contained" color="primary">
           Fetch Details
         </Button>
+        {/* <Typography variant="body2" style={{ marginTop: '5px', color: '#4B4F54', textAlign: 'center' }}>
+          Available on phone
+        </Typography> */}
       </CardContent>
     </Card>
   );
